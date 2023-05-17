@@ -1,6 +1,6 @@
 {
   "orgName": "mfg-rebates-ship-debit - Dev Org",
-  "edition": "Developer",
+  "template": "0TTB0000001SaS3",
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
