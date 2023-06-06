@@ -1,0 +1,21 @@
+extract:
+  RebatePtnrSpclPrcTrmBnft:
+    fields:
+    - Discount
+    - IsDiscountByPercent
+    - EffectiveEndDate
+    - EffectiveStartDate
+    - MaximumQuantity
+    - MinimumQuantity
+    - Name
+    - RebatePartnerSpecialPrcTrmId
+    - ReferencePricePerUnit
+  RebatePartnerSpecialPrcTrm:
+    fields:
+    - Discount
+    - IsDiscountByPercent
+    - Name
+    - ProductQuantity
+    - ReferencePricePerUnit
+    - SalePricePerUnit
+    - Status
