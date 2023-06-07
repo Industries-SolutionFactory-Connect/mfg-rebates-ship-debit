@@ -26,3 +26,106 @@ tasks:
     run_tests:
         options:
             required_org_code_coverage_percent: 75
+
+flows:
+    dependencies:
+        steps:
+            2: 
+                task: org_settings
+                options:
+                    definition_file: orgs/dev.json
+                ui_options:
+                    name: Enabling Org Settings
+            3:
+                task: assign_permission_sets
+                options:
+                    api_names: ShipAndDebitManagementAdminPsl, ShipAndDebitManagementUserPsl
+                    user_alias: UUser, AUser
+                ui_options:
+                    name: Adding Permission Set to Admin User                    
+    dev_org:
+        steps:
+            3.1:
+                task: update_data
+                options:
+                    object: RebateClaim
+                    where: Description like 'ShipAndDebit%'
+                    recipe: snowfakery/updateRebateClaimStatus.recipe.yml
+                ui_options:
+                    name: Assign Role to Admin User            
+    rebates-sd-setup:
+        steps:
+            1: 
+                task: org_settings
+                options:
+                    definition_file: orgs/dev.json
+                ui_options:
+                    name: Enabling Org Settings
+
+            2:
+                task: assign_permission_sets
+                options:
+                    api_names: ShipAndDebitManagementAdminPsl, ShipAndDebitManagementUserPsl
+                    user_alias: UUser, AUser
+                ui_options:
+                    name: Adding Permission Set to Admin User
+        
+            3:
+                task: deploy
+                options:
+                    path: force-app/main/default/
+                ui_options:
+                    name: Deploy the metadata      
+
+            
+            # 4:
+            #     task: delete_data
+            #     options:
+            #         no-prompt: true
+            #         objects:  RebateClaim,RebateMemberClaimAggregate, RebatePartnerSpecialPrcTrm, TransactionJournal, RebateProgramMember, RebateProgram, Product2, Account
+            #     ui_options:
+            #         name: Delete recently created objects 
+
+            4:
+                task: load_dataset
+                options:
+                    mapping: datasets/default/default.mapping.yml
+                    sql_path: datasets/default/default.dataset.sql
+                ui_options:
+                    name: Load Data records   
+
+            5:
+                task: update_data
+                options:
+                    object: RebateClaim
+                    where: Description like 'ShipAndDebit%'
+                    recipe: snowfakery/updateRebateClaimStatus.recipe.yml
+                ui_options:
+                    name: Assign Role to Admin User
+
+            
+plans:
+    install:
+        slug: install
+        title: Ship and Debit
+        tier: primary
+        is_listed: True
+        preflight_message: "This will install Ship and Debit Module"
+        post_install_message: "Thanks for installing Ship and Debit Module. "
+        error_message: "To get help with this error, go to [help.salesforce.com](https://help.salesforce.com/), find the Support & Services area and log a technical support ticket with Salesforce. Include “PMM” in the subject line and include in your comment the installation link shown here."
+        checks:
+            - when: "'ShipAndDebitManagementAdminPsl' not in tasks.get_available_permission_set_licenses()"
+              action: error
+              message: "You need ShipAndDebitManagementAdminPsl licence to use this feature. Contact your Administrator."
+            - when: "'ShipAndDebitManagementUserPsl' not in tasks.get_available_permission_set_licenses()"
+              action: error
+              message: "You need ShipAndDebitManagementUserPsl licence to use this feature. Contact your Administrator."
+            - when: "'RebateManagementPsl' not in tasks.get_available_permission_set_licenses()"
+              action: error
+              message: "You need RebateManagementPsl licence to use this feature. Contact your Administrator."
+            - when: "'RebateManagementExpCloudPsl' not in tasks.get_available_permission_set_licenses()"
+              action: error
+              message: "You need RebateManagementExpCloudPsl licence to use this feature. Contact your Administrator."
+        steps:
+            1:
+                flow: rebates-sd-setup

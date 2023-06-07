@@ -1,0 +1,167 @@
+extract:
+  Account:
+    fields:
+    - Description
+    - Fax
+    - Name
+    - AccountNumber
+    - Phone
+    - Rating
+    - Site
+    - AccountSource
+    - Type
+    - AnnualRevenue
+    - BillingCity
+    - BillingCountry
+    - BillingGeocodeAccuracy
+    - BillingLatitude
+    - BillingLongitude
+    - BillingState
+    - BillingStreet
+    - BillingPostalCode
+    - Jigsaw
+    - NumberOfEmployees
+    - Industry
+    - Ownership
+    - ParentId
+    - ShippingCity
+    - ShippingCountry
+    - ShippingGeocodeAccuracy
+    - ShippingLatitude
+    - ShippingLongitude
+    - ShippingState
+    - ShippingStreet
+    - ShippingPostalCode
+    - Sic
+    - SicDesc
+    - TickerSymbol
+    - Website
+  RebateClaim:
+    fields:
+    - ClaimedByAccountId
+    - ParticipatingAccountId
+    - ClaimedByAccountNumber
+    - ParticipatingAccountNumber
+    - ProductCode
+    - ProductId
+    - CalculatedAmount
+    - ClaimAmount
+    - ClaimDate
+    - ClaimType
+    - Description
+    - ProcessingStatus
+    - ProcessingStatusMessage
+    - ProgramReferenceNumber
+    - Quantity
+    - RebateMemberClaimAggregateId
+    - RebatePaymentId
+    - ReferencePricePerUnit
+    - ResalePricePerUnit
+    - SalePricePerUnit
+    - ShipDate
+    - ShippedTransactionIdentifier
+    - TotalAdjustmentAmount
+    - TransactionIdentifier
+    - UsageType
+  RebateProgramMember:
+    fields:
+    - AccountId
+    - ShipToAccountId
+    - IsPayoutCalcSkipped
+    - MemberStatus
+    - Name
+    - RebateProgramId
+  TransactionJournal:
+    fields:
+    - AccountId
+    - ShipToAccountId
+    - ProductId
+    - RebatePgmReferenceNumber
+    - ActivityDate
+    - ErrorDescription
+    - ExternalTransactionNumber
+    - JournalDate
+    - JournalTypeId
+    - MemberId
+    - Quantity
+    - QuantityUnitOfMeasureId
+    - TransactionAmount
+    - UsageType
+  Product2:
+    fields:
+    - IsActive
+    - DisplayUrl
+    - ExternalDataSourceId
+    - ExternalId
+    - ProductCode
+    - Description
+    - Family
+    - Name
+    - StockKeepingUnit
+    - QuantityUnitOfMeasure
+  PricebookEntry:
+    fields:
+    - Product2Id
+    - IsActive
+    - UnitPrice
+    - UseStandardPrice
+    - Pricebook2Id
+  RebateMemberClaimAggregate:
+    fields:
+    - ProductId
+    - TotalClaimedAmount
+    - TotalClaimedQuantity
+    - RebateProgramMemberId
+  RebatePartnerSpecialPrcTrm:
+    fields:
+    - ProductId
+    - ProductQuantity
+    - Discount
+    - IsDiscountByPercent
+    - Name
+    - RebateProgramMemberId
+    - ReferencePricePerUnit
+    - SalePricePerUnit
+    - Status
+  RebateClaimAdjustment:
+    fields:
+    - AdjustmentAmount
+    - ApprovedDate
+    - Comments
+    - Name
+    - RebateClaimId
+    - Status
+  RebatePtnrSpclPrcTrmBnft:
+    fields:
+    - Discount
+    - IsDiscountByPercent
+    - EffectiveEndDate
+    - EffectiveStartDate
+    - MaximumQuantity
+    - MinimumQuantity
+    - Name
+    - RebatePartnerSpecialPrcTrmId
+    - ReferencePricePerUnit
+  RebateProgram:
+    fields:
+    - Description
+    - EndDate
+    - Frequency
+    - GracePeriodDayCount
+    - Name
+    - PayoutCalculationDayCount
+    - ProgramReferenceNumber
+    - RebateProgramUrl
+    - StartDate
+    - Status
+    - Type
+  JournalType:
+    fields:
+    - Description
+    - Name
+    - ProcessType
+  Pricebook2:
+    fields:
+    - Description
+    - IsActive
+    - Name

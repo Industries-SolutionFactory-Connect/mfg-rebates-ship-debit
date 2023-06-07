@@ -1,0 +1,63 @@
+# Editing this file is usually not recommended because it will
+# be overwritten the next time you re-capture this data.
+#
+# You can change this file's contents permanently by creating a
+# .load.yml file and re-capturing:
+#
+#  https://cumulusci.readthedocs.io/en/stable/data.html#extracting-and-loading-sample-datasets
+Insert Product2:
+  sf_object: Product2
+  table: Product2
+  fields:
+  - Name
+Insert RebateProgram:
+  sf_object: RebateProgram
+  table: RebateProgram
+  fields:
+  - EndDate
+  - Frequency
+  - Name
+  - StartDate
+Insert RebateProgramMember:
+  sf_object: RebateProgramMember
+  table: RebateProgramMember
+  fields:
+  - Name
+  lookups:
+    RebateProgramId:
+      table: RebateProgram
+      key_field: RebateProgramId
+Insert RebatePartnerSpecialPrcTrm:
+  sf_object: RebatePartnerSpecialPrcTrm
+  table: RebatePartnerSpecialPrcTrm
+  fields:
+  - Discount
+  - IsDiscountByPercent
+  - Name
+  - ProductQuantity
+  - ReferencePricePerUnit
+  - SalePricePerUnit
+  - Status
+  lookups:
+    ProductId:
+      table: Product2
+      key_field: ProductId
+    RebateProgramMemberId:
+      table: RebateProgramMember
+      key_field: RebateProgramMemberId
+Insert RebatePtnrSpclPrcTrmBnft:
+  sf_object: RebatePtnrSpclPrcTrmBnft
+  table: RebatePtnrSpclPrcTrmBnft
+  fields:
+  - Discount
+  - IsDiscountByPercent
+  - EffectiveEndDate
+  - EffectiveStartDate
+  - MaximumQuantity
+  - MinimumQuantity
+  - Name
+  - ReferencePricePerUnit
+  lookups:
+    RebatePartnerSpecialPrcTrmId:
+      table: RebatePartnerSpecialPrcTrm
+      key_field: RebatePartnerSpecialPrcTrmId

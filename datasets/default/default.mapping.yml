@@ -1,0 +1,267 @@
+# Editing this file is usually not recommended because it will
+# be overwritten the next time you re-capture this data.
+#
+# You can change this file's contents permanently by creating a
+# .load.yml file and re-capturing:
+#
+#  https://cumulusci.readthedocs.io/en/stable/data.html#extracting-and-loading-sample-datasets
+Insert Account:
+  sf_object: Account
+  table: Account
+  fields:
+  - Description
+  - Fax
+  - Name
+  - AccountNumber
+  - Phone
+  - Rating
+  - Site
+  - AccountSource
+  - Type
+  - AnnualRevenue
+  - BillingCity
+  - BillingCountry
+  - BillingGeocodeAccuracy
+  - BillingLatitude
+  - BillingLongitude
+  - BillingState
+  - BillingStreet
+  - BillingPostalCode
+  - Jigsaw
+  - NumberOfEmployees
+  - Industry
+  - Ownership
+  - ShippingCity
+  - ShippingCountry
+  - ShippingGeocodeAccuracy
+  - ShippingLatitude
+  - ShippingLongitude
+  - ShippingState
+  - ShippingStreet
+  - ShippingPostalCode
+  - Sic
+  - SicDesc
+  - TickerSymbol
+  - Website
+  lookups:
+    ParentId:
+      table: Account
+      key_field: ParentId
+      after: Insert Account
+Insert Product2:
+  sf_object: Product2
+  table: Product2
+  fields:
+  - IsActive
+  - DisplayUrl
+  - ExternalId
+  - ProductCode
+  - Description
+  - Family
+  - Name
+  - StockKeepingUnit
+  - QuantityUnitOfMeasure
+Insert RebateProgram:
+  sf_object: RebateProgram
+  table: RebateProgram
+  fields:
+  - Description
+  - EndDate
+  - Frequency
+  - GracePeriodDayCount
+  - Name
+  - PayoutCalculationDayCount
+  - ProgramReferenceNumber
+  - RebateProgramUrl
+  - StartDate
+  - Status
+  - Type
+Insert JournalType:
+  sf_object: JournalType
+  table: JournalType
+  fields:
+  - Description
+  - Name
+  - ProcessType
+Insert Pricebook2:
+  sf_object: Pricebook2
+  table: Pricebook2
+  fields:
+  - Description
+  - IsActive
+  - Name
+Insert UnitOfMeasure:
+  sf_object: UnitOfMeasure
+  table: UnitOfMeasure
+  fields:
+  - Name
+  - Type
+  - UnitCode
+Insert RebatePayment:
+  sf_object: RebatePayment
+  table: RebatePayment
+  fields:
+  - Amount
+  - Name
+Insert RebateProgramMember:
+  sf_object: RebateProgramMember
+  table: RebateProgramMember
+  fields:
+  - IsPayoutCalcSkipped
+  - MemberStatus
+  - Name
+  lookups:
+    AccountId:
+      table: Account
+      key_field: AccountId
+    ShipToAccountId:
+      table: Account
+      key_field: ShipToAccountId
+    RebateProgramId:
+      table: RebateProgram
+      key_field: RebateProgramId
+# Insert PricebookEntry:
+#   sf_object: PricebookEntry
+#   table: PricebookEntry
+#   fields:
+#   - IsActive
+#   - UnitPrice
+#   - UseStandardPrice
+#   lookups:
+#     Product2Id:
+#       table: Product2
+#       key_field: Product2Id
+#     Pricebook2Id:
+#       table: Pricebook2
+#       key_field: Pricebook2Id
+Insert TransactionJournal:
+  sf_object: TransactionJournal
+  table: TransactionJournal
+  fields:
+  - RebatePgmReferenceNumber
+  - ActivityDate
+  - ErrorDescription
+  - ExternalTransactionNumber
+  - JournalDate
+  - Quantity
+  - TransactionAmount
+  - UsageType
+  lookups:
+    AccountId:
+      table: Account
+      key_field: AccountId
+    ShipToAccountId:
+      table: Account
+      key_field: ShipToAccountId
+    ProductId:
+      table: Product2
+      key_field: ProductId
+    JournalTypeId:
+      table: JournalType
+      key_field: JournalTypeId
+    MemberId:
+      table: RebateProgramMember
+      key_field: MemberId
+    QuantityUnitOfMeasureId:
+      table: UnitOfMeasure
+      key_field: QuantityUnitOfMeasureId
+Insert RebatePartnerSpecialPrcTrm:
+  sf_object: RebatePartnerSpecialPrcTrm
+  table: RebatePartnerSpecialPrcTrm
+  fields:
+  - ProductQuantity
+  - Discount
+  - IsDiscountByPercent
+  - Name
+  - ReferencePricePerUnit
+  - SalePricePerUnit
+  - Status
+  lookups:
+    ProductId:
+      table: Product2
+      key_field: ProductId
+    RebateProgramMemberId:
+      table: RebateProgramMember
+      key_field: RebateProgramMemberId
+Insert RebatePtnrSpclPrcTrmBnft:
+  sf_object: RebatePtnrSpclPrcTrmBnft
+  table: RebatePtnrSpclPrcTrmBnft
+  fields:
+  - Discount
+  - IsDiscountByPercent
+  - EffectiveEndDate
+  - EffectiveStartDate
+  - MaximumQuantity
+  - MinimumQuantity
+  - Name
+  - ReferencePricePerUnit
+  lookups:
+    RebatePartnerSpecialPrcTrmId:
+      table: RebatePartnerSpecialPrcTrm
+      key_field: RebatePartnerSpecialPrcTrmId      
+Insert RebateMemberClaimAggregate:
+  sf_object: RebateMemberClaimAggregate
+  table: RebateMemberClaimAggregate
+  fields:
+  - TotalClaimedAmount
+  - TotalClaimedQuantity
+  lookups:
+    ProductId:
+      table: Product2
+      key_field: ProductId
+    RebateProgramMemberId:
+      table: RebateProgramMember
+      key_field: RebateProgramMemberId      
+Insert RebateClaim:
+  sf_object: RebateClaim
+  table: RebateClaim
+  fields:
+  - ClaimedByAccountNumber
+  - ParticipatingAccountNumber
+  - ProductCode
+  - CalculatedAmount
+  - ClaimAmount
+  - ClaimDate
+  - ClaimType
+  - Description
+  - ProcessingStatus
+  - ProcessingStatusMessage
+  - ProgramReferenceNumber
+  - Quantity
+  - ReferencePricePerUnit
+  - ResalePricePerUnit
+  - SalePricePerUnit
+  - ShipDate
+  - ShippedTransactionIdentifier
+  - TotalAdjustmentAmount
+  - TransactionIdentifier
+  - UsageType
+  lookups:
+    ClaimedByAccountId:
+      table: Account
+      key_field: ClaimedByAccountId
+    ParticipatingAccountId:
+      table: Account
+      key_field: ParticipatingAccountId
+    ProductId:
+      table: Product2
+      key_field: ProductId
+    RebateMemberClaimAggregateId:
+      table: RebateMemberClaimAggregate
+      key_field: RebateMemberClaimAggregateId
+    RebatePaymentId:
+      table: RebatePayment
+      key_field: RebatePaymentId
+Insert RebateClaimAdjustment:
+  sf_object: RebateClaimAdjustment
+  table: RebateClaimAdjustment
+  fields:
+  - AdjustmentAmount
+  - ApprovedDate
+  - Comments
+  - Name
+  - Status
+  lookups:
+    RebateClaimId:
+      table: RebateClaim
+      key_field: RebateClaimId
