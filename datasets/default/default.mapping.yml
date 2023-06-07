@@ -120,20 +120,20 @@ Insert RebateProgramMember:
     RebateProgramId:
       table: RebateProgram
       key_field: RebateProgramId
-Insert PricebookEntry:
-  sf_object: PricebookEntry
-  table: PricebookEntry
-  fields:
-  - IsActive
-  - UnitPrice
-  - UseStandardPrice
-  lookups:
-    Product2Id:
-      table: Product2
-      key_field: Product2Id
-    Pricebook2Id:
-      table: Pricebook2
-      key_field: Pricebook2Id
+# Insert PricebookEntry:
+#   sf_object: PricebookEntry
+#   table: PricebookEntry
+#   fields:
+#   - IsActive
+#   - UnitPrice
+#   - UseStandardPrice
+#   lookups:
+#     Product2Id:
+#       table: Product2
+#       key_field: Product2Id
+#     Pricebook2Id:
+#       table: Pricebook2
+#       key_field: Pricebook2Id
 Insert TransactionJournal:
   sf_object: TransactionJournal
   table: TransactionJournal
@@ -165,19 +165,6 @@ Insert TransactionJournal:
     QuantityUnitOfMeasureId:
       table: UnitOfMeasure
       key_field: QuantityUnitOfMeasureId
-Insert RebateMemberClaimAggregate:
-  sf_object: RebateMemberClaimAggregate
-  table: RebateMemberClaimAggregate
-  fields:
-  - TotalClaimedAmount
-  - TotalClaimedQuantity
-  lookups:
-    ProductId:
-      table: Product2
-      key_field: ProductId
-    RebateProgramMemberId:
-      table: RebateProgramMember
-      key_field: RebateProgramMemberId
 Insert RebatePartnerSpecialPrcTrm:
   sf_object: RebatePartnerSpecialPrcTrm
   table: RebatePartnerSpecialPrcTrm
@@ -196,6 +183,35 @@ Insert RebatePartnerSpecialPrcTrm:
     RebateProgramMemberId:
       table: RebateProgramMember
       key_field: RebateProgramMemberId
+Insert RebatePtnrSpclPrcTrmBnft:
+  sf_object: RebatePtnrSpclPrcTrmBnft
+  table: RebatePtnrSpclPrcTrmBnft
+  fields:
+  - Discount
+  - IsDiscountByPercent
+  - EffectiveEndDate
+  - EffectiveStartDate
+  - MaximumQuantity
+  - MinimumQuantity
+  - Name
+  - ReferencePricePerUnit
+  lookups:
+    RebatePartnerSpecialPrcTrmId:
+      table: RebatePartnerSpecialPrcTrm
+      key_field: RebatePartnerSpecialPrcTrmId      
+Insert RebateMemberClaimAggregate:
+  sf_object: RebateMemberClaimAggregate
+  table: RebateMemberClaimAggregate
+  fields:
+  - TotalClaimedAmount
+  - TotalClaimedQuantity
+  lookups:
+    ProductId:
+      table: Product2
+      key_field: ProductId
+    RebateProgramMemberId:
+      table: RebateProgramMember
+      key_field: RebateProgramMemberId      
 Insert RebateClaim:
   sf_object: RebateClaim
   table: RebateClaim
@@ -236,22 +252,6 @@ Insert RebateClaim:
     RebatePaymentId:
       table: RebatePayment
       key_field: RebatePaymentId
-Insert RebatePtnrSpclPrcTrmBnft:
-  sf_object: RebatePtnrSpclPrcTrmBnft
-  table: RebatePtnrSpclPrcTrmBnft
-  fields:
-  - Discount
-  - IsDiscountByPercent
-  - EffectiveEndDate
-  - EffectiveStartDate
-  - MaximumQuantity
-  - MinimumQuantity
-  - Name
-  - ReferencePricePerUnit
-  lookups:
-    RebatePartnerSpecialPrcTrmId:
-      table: RebatePartnerSpecialPrcTrm
-      key_field: RebatePartnerSpecialPrcTrmId
 Insert RebateClaimAdjustment:
   sf_object: RebateClaimAdjustment
   table: RebateClaimAdjustment
