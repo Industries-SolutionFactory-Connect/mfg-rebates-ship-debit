@@ -55,27 +55,27 @@ flows:
                     name: Assign Role to Admin User            
     rebates-sd-setup:
         steps:
-            1: 
-                task: org_settings
-                options:
-                    definition_file: orgs/dev.json
-                ui_options:
-                    name: Enabling Org Settings
+            # 1: 
+            #     task: org_settings
+            #     options:
+            #         definition_file: orgs/dev.json
+            #     ui_options:
+            #         name: Enabling Org Settings
 
-            2:
-                task: assign_permission_sets
-                options:
-                    api_names: ShipAndDebitManagementAdminPsl, ShipAndDebitManagementUserPsl
-                    user_alias: UUser, AUser
-                ui_options:
-                    name: Adding Permission Set to Admin User
+            # 2:
+            #     task: assign_permission_sets
+            #     options:
+            #         api_names: ShipAndDebitManagementAdminPsl, ShipAndDebitManagementUserPsl
+            #         user_alias: UUser, AUser
+            #     ui_options:
+            #         name: Adding Permission Set to Admin User
         
-            3:
-                task: deploy
-                options:
-                    path: force-app/main/default/
-                ui_options:
-                    name: Deploy the metadata      
+            # 3:
+            #     task: deploy
+            #     options:
+            #         path: force-app/main/default/
+            #     ui_options:
+            #         name: Deploy the metadata      
 
             
             # 4:

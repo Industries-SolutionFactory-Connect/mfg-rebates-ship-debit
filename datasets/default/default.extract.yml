@@ -6,8 +6,6 @@ extract:
     - Name
     - AccountNumber
     - Phone
-    - Rating
-    - Site
     - AccountSource
     - Type
     - AnnualRevenue
@@ -23,7 +21,6 @@ extract:
     - NumberOfEmployees
     - Industry
     - Ownership
-    - ParentId
     - ShippingCity
     - ShippingCountry
     - ShippingGeocodeAccuracy
@@ -32,10 +29,6 @@ extract:
     - ShippingState
     - ShippingStreet
     - ShippingPostalCode
-    - Sic
-    - SicDesc
-    - TickerSymbol
-    - Website
   RebateClaim:
     fields:
     - ClaimedByAccountId

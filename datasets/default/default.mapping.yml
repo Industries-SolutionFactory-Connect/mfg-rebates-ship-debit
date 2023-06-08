@@ -14,8 +14,6 @@ Insert Account:
   - Name
   - AccountNumber
   - Phone
-  - Rating
-  - Site
   - AccountSource
   - Type
   - AnnualRevenue
@@ -39,15 +37,6 @@ Insert Account:
   - ShippingState
   - ShippingStreet
   - ShippingPostalCode
-  - Sic
-  - SicDesc
-  - TickerSymbol
-  - Website
-  lookups:
-    ParentId:
-      table: Account
-      key_field: ParentId
-      after: Insert Account
 Insert Product2:
   sf_object: Product2
   table: Product2

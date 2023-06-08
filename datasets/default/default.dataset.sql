@@ -6,8 +6,6 @@ CREATE TABLE "Account" (
 	"Name" VARCHAR(255), 
 	"AccountNumber" VARCHAR(255), 
 	"Phone" VARCHAR(255), 
-	"Rating" VARCHAR(255), 
-	"Site" VARCHAR(255), 
 	"AccountSource" VARCHAR(255), 
 	"Type" VARCHAR(255), 
 	"AnnualRevenue" VARCHAR(255), 
@@ -31,21 +29,16 @@ CREATE TABLE "Account" (
 	"ShippingState" VARCHAR(255), 
 	"ShippingStreet" VARCHAR(255), 
 	"ShippingPostalCode" VARCHAR(255), 
-	"Sic" VARCHAR(255), 
-	"SicDesc" VARCHAR(255), 
-	"TickerSymbol" VARCHAR(255), 
-	"Website" VARCHAR(255), 
-	"ParentId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Account" VALUES(1,'','(212) 555-5555','Acme_New','','(212) 555-5555','','','','Prospect','100000000.0','New York','USA','','','','NY','10 Main Rd.','31349','','680','Manufacturing','','New York','USA','','','','NY','10 Main Rd.','31349','','','','','');
-INSERT INTO "Account" VALUES(4,'','','Analog devices','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','');
-INSERT INTO "Account" VALUES(5,'','','Dreamer','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','');
-INSERT INTO "Account" VALUES(6,'','','DreamWaver','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','');
-INSERT INTO "Account" VALUES(7,'','','Sansoos','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','');
-INSERT INTO "Account" VALUES(8,'','','Uptron','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','');
-INSERT INTO "Account" VALUES(9,'','','Xelate','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','');
-INSERT INTO "Account" VALUES(10,'','','Xelate distributor','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','');
+INSERT INTO "Account" VALUES(1,'','(212) 555-5555','Acme','','(212) 555-5555','','Prospect','100000000.0','New York','USA','','','','NY','10 Main Rd.','31349','','680','Manufacturing','','New York','USA','','','','NY','10 Main Rd.','31349');
+INSERT INTO "Account" VALUES(4,'','','Analog devices','','','','','','','','','','','','','','','','','','','','','','','','','');
+INSERT INTO "Account" VALUES(5,'','','Dreamer','','','','','','','','','','','','','','','','','','','','','','','','','');
+INSERT INTO "Account" VALUES(6,'','','DreamWaver','','','','','','','','','','','','','','','','','','','','','','','','','');
+INSERT INTO "Account" VALUES(7,'','','Sansoos','','','','','','','','','','','','','','','','','','','','','','','','','');
+INSERT INTO "Account" VALUES(8,'','','Uptron','','','','','','','','','','','','','','','','','','','','','','','','','');
+INSERT INTO "Account" VALUES(9,'','','Xelate','','','','','','','','','','','','','','','','','','','','','','','','','');
+INSERT INTO "Account" VALUES(10,'','','Xelate distributor','','','','','','','','','','','','','','','','','','','','','','','','','');
 CREATE TABLE "JournalType" (
 	id INTEGER NOT NULL, 
 	"Description" VARCHAR(255), 
@@ -53,7 +46,7 @@ CREATE TABLE "JournalType" (
 	"ProcessType" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "JournalType" VALUES(1,'','Ship And Debit','ShipAndDebit');
+INSERT INTO "JournalType" VALUES(1,'','Ship And Debit Journal','ShipAndDebit');
 CREATE TABLE "Pricebook2" (
 	id INTEGER NOT NULL, 
 	"Description" VARCHAR(255), 
