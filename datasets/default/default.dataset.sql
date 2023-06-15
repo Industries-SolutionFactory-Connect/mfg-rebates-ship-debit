@@ -31,7 +31,7 @@ CREATE TABLE "Account" (
 	"ShippingPostalCode" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Account" VALUES(1,'','(212) 555-5555','Acme','','(212) 555-5555','','Prospect','100000000.0','New York','USA','','','','NY','10 Main Rd.','31349','','680','Manufacturing','','New York','USA','','','','NY','10 Main Rd.','31349');
+INSERT INTO "Account" VALUES(1,'','(212) 555-2431','ACM Corporation','','(212) 555-2431','','Prospect','31100000.0','New York','USA','','','','NY','','20039','','230','Manufacturing','','New York','USA','','','','NY','','20039');
 INSERT INTO "Account" VALUES(4,'','','Analog devices','','','','','','','','','','','','','','','','','','','','','','','','','');
 INSERT INTO "Account" VALUES(5,'','','Dreamer','','','','','','','','','','','','','','','','','','','','','','','','','');
 INSERT INTO "Account" VALUES(6,'','','DreamWaver','','','','','','','','','','','','','','','','','','','','','','','','','');
