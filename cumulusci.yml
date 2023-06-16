@@ -95,7 +95,12 @@ flows:
                 ui_options:
                     name: Assign Role to Admin User
 
-            
+    rebates:
+        steps:
+            1: 
+                flow: rebates-sd-setup
+            2: 
+                flow: rebates-sd-data
 plans:
     install:
         slug: install
