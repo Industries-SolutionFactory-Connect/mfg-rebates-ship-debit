@@ -33,7 +33,6 @@ extract:
     fields:
     - ClaimedByAccountId
     - ParticipatingAccountId
-    - ClaimedByAccountNumber
     - ParticipatingAccountNumber
     - ProductCode
     - ProductId
@@ -46,14 +45,11 @@ extract:
     - ProcessingStatusMessage
     - ProgramReferenceNumber
     - Quantity
-    - RebateMemberClaimAggregateId
-    - RebatePaymentId
     - ReferencePricePerUnit
     - ResalePricePerUnit
     - SalePricePerUnit
     - ShipDate
     - ShippedTransactionIdentifier
-    - TotalAdjustmentAmount
     - TransactionIdentifier
     - UsageType
   RebateProgramMember:
@@ -99,12 +95,6 @@ extract:
     - UnitPrice
     - UseStandardPrice
     - Pricebook2Id
-  RebateMemberClaimAggregate:
-    fields:
-    - ProductId
-    - TotalClaimedAmount
-    - TotalClaimedQuantity
-    - RebateProgramMemberId
   RebatePartnerSpecialPrcTrm:
     fields:
     - ProductId

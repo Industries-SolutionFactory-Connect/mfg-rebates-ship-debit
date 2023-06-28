@@ -1,0 +1,7 @@
+- plugin: snowfakery.standard_plugins.Salesforce.SalesforceQuery
+- object: RebateClaim
+  fields:
+    RebateMemberClaimAggregateId:
+      SalesforceQuery.find_record:
+        from: RebateMemberClaimAggregate
+        where: TotalClaimedAmount = '40'

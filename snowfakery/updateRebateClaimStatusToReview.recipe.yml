@@ -1,0 +1,4 @@
+- plugin: snowfakery.standard_plugins.Salesforce.SalesforceQuery
+- object: RebateClaim
+  fields:
+    ProcessingStatus: In Review

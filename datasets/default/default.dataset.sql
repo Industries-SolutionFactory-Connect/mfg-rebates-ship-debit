@@ -90,7 +90,6 @@ CREATE TABLE "RebateClaim" (
 	"ClaimedByAccountNumber" VARCHAR(255), 
 	"ParticipatingAccountNumber" VARCHAR(255), 
 	"ProductCode" VARCHAR(255), 
-	"CalculatedAmount" VARCHAR(255), 
 	"ClaimAmount" VARCHAR(255), 
 	"ClaimDate" VARCHAR(255), 
 	"ClaimType" VARCHAR(255), 
@@ -104,32 +103,30 @@ CREATE TABLE "RebateClaim" (
 	"SalePricePerUnit" VARCHAR(255), 
 	"ShipDate" VARCHAR(255), 
 	"ShippedTransactionIdentifier" VARCHAR(255), 
-	"TotalAdjustmentAmount" VARCHAR(255), 
 	"TransactionIdentifier" VARCHAR(255), 
 	"UsageType" VARCHAR(255), 
 	"ClaimedByAccountId" VARCHAR(255), 
 	"ParticipatingAccountId" VARCHAR(255), 
 	"ProductId" VARCHAR(255), 
-	"RebateMemberClaimAggregateId" VARCHAR(255), 
-	"RebatePaymentId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "RebateClaim" VALUES(1,'','','','20.0','100.0','2023-04-11T19:00:00.000+0000','ShipAndDebit','','System Processed','','SANUPTR5258','2.0','','','','','','','','Rebates','8','7','4','','');
-INSERT INTO "RebateClaim" VALUES(2,'','','','1000.0','233.0','2023-06-22T19:00:00.000+0000','ShipAndDebit','','System Processed','','SANUPTR5258','20.0','','','','','','','','Rebates','8','7','3','2','');
-INSERT INTO "RebateClaim" VALUES(3,'','','','20.0','100.0','2023-05-09T19:00:00.000+0000','ShipAndDebit','','System Processed','','SANUPTR5258','1.0','','','','','','','','Rebates','8','7','4','1','');
-INSERT INTO "RebateClaim" VALUES(4,'','','','20.0','100.0','2023-05-02T19:00:00.000+0000','ShipAndDebit','','System Processed','','SANUPTR5258','1.0','','','','','','','','Rebates','8','7','4','1','');
-INSERT INTO "RebateClaim" VALUES(5,'','','','1000.0','290.0','2023-05-15T19:00:00.000+0000','ShipAndDebit','ShipAndDebit Rebate Claim','System Processed','','SANUPTR5258','20.0','','','','','','-20.0','','Rebates','8','7','3','2','');
-INSERT INTO "RebateClaim" VALUES(6,'','','','100.0','233.0','2023-06-13T19:00:00.000+0000','ShipAndDebit','','System Processed','','SANUPTR5258','2.0','','','','','','','','Rebates','8','7','3','2','');
-INSERT INTO "RebateClaim" VALUES(7,'','','','1500.0','121.0','2023-05-11T19:00:00.000+0000','ShipAndDebit','','System Processed','','PRNACME248','60.0','','','','','','','','Rebates','9','10','1','3','');
-INSERT INTO "RebateClaim" VALUES(8,'','','','651.0','121.0','2023-05-23T19:00:00.000+0000','ShipAndDebit','','System Processed','','PRNACME248','21.0','','','','','','','','Rebates','9','10','1','3','');
-INSERT INTO "RebateClaim" VALUES(9,'','','','570.0','121.0','2023-05-30T19:00:00.000+0000','ShipAndDebit','','System Processed','','PRNACME248','19.0','','','','','','','','Rebates','9','10','1','3','');
-INSERT INTO "RebateClaim" VALUES(10,'','','','1500.0','121.0','2023-05-10T19:00:00.000+0000','ShipAndDebit','','System Failed','The required rebate claim product quantity is more than the remaining product quantity.','PMACMEACME234','61.0','','','','','','','','Rebates','1','4','2','','');
-INSERT INTO "RebateClaim" VALUES(11,'','','','122.0','1.0','2023-07-08T19:00:00.000+0000','ShipAndDebit','','System Processed','','SPLYRPRGRM625','2.0','','','','','','','','Rebates','1','7','3','5','');
-INSERT INTO "RebateClaim" VALUES(12,'','','','130.0','1.0','2023-06-20T19:00:00.000+0000','ShipAndDebit','ShipAndDebit Rebate Claim','System Processed','','SPLYRPRGRM625','2.0','','','','','','-30.0','','Rebates','1','7','3','5','');
-INSERT INTO "RebateClaim" VALUES(13,'','','','1500.0','121.0','2023-05-10T19:00:00.000+0000','ShipAndDebit','','System Failed','The required rebate claim product quantity is more than the remaining product quantity.','PRNACME248','61.0','','','','','','','','Rebates','9','10','1','','');
-INSERT INTO "RebateClaim" VALUES(14,'','','','60.0','121.0','2023-05-25T19:00:00.000+0000','ShipAndDebit','','System Processed','','PMACMEACME234','2.0','','','','','','','','Rebates','1','4','2','4','');
-INSERT INTO "RebateClaim" VALUES(15,'','','','12.0','1.0','2023-07-17T19:00:00.000+0000','ShipAndDebit','','System Failed','The required rebate claim product quantity is more than the remaining product quantity.','DRMPRN8585','60.0','','','','','','','','Rebates','5','6','4','','');
-INSERT INTO "RebateClaim" VALUES(16,'','','','12.0','1.0','2023-07-08T19:00:00.000+0000','ShipAndDebit','ShipAndDebit Rebate Claim','System Processed','','DRMPRN8585','2.0','','','','','','-5.0','','Rebates','5','6','4','6','');
+INSERT INTO "RebateClaim" VALUES(1,'','','','100.0','2023-04-11T19:00:00.000+0000','ShipAndDebit','Ship And Debit','New','','SANUPTR5258','2.0','','','','','','','Rebates','8','7','4');
+INSERT INTO "RebateClaim" VALUES(2,'','','','233.0','2023-06-22T19:00:00.000+0000','ShipAndDebit','Ship And Debit Rebates','New','','SANUPTR5258','20.0','','','','','','','Rebates','8','7','3');
+INSERT INTO "RebateClaim" VALUES(3,'','','','100.0','2023-05-09T19:00:00.000+0000','ShipAndDebit','Ship & Debit Rebates','New','','SANUPTR5258','1.0','','','','','','','Rebates','8','7','4');
+INSERT INTO "RebateClaim" VALUES(4,'','','','100.0','2023-05-02T19:00:00.000+0000','ShipAndDebit','Ship & Debit','New','','SANUPTR5258','1.0','','','','','','','Rebates','8','7','4');
+INSERT INTO "RebateClaim" VALUES(5,'','','','290.0','2023-05-15T19:00:00.000+0000','ShipAndDebit','ShipAndDebit Rebate Claim','New','','SANUPTR5258','20.0','','','','','','','Rebates','8','7','3');
+INSERT INTO "RebateClaim" VALUES(6,'','','','233.0','2023-06-13T19:00:00.000+0000','ShipAndDebit','Ship & Debit Rebate Claim','New','','SANUPTR5258','2.0','','','','','','','Rebates','8','7','3');
+INSERT INTO "RebateClaim" VALUES(7,'','','','121.0','2023-05-11T19:00:00.000+0000','ShipAndDebit','Ship And Debit','New','','PRNACME248','60.0','','','','','','','Rebates','9','10','1');
+INSERT INTO "RebateClaim" VALUES(8,'','','','121.0','2023-05-23T19:00:00.000+0000','ShipAndDebit','Ship And Debit Rebates','New','','PRNACME248','21.0','','','','','','','Rebates','9','10','1');
+INSERT INTO "RebateClaim" VALUES(9,'','','','121.0','2023-05-30T19:00:00.000+0000','ShipAndDebit','Ship & Debit Rebates','New','','PRNACME248','19.0','','','','','','','Rebates','9','10','1');
+INSERT INTO "RebateClaim" VALUES(10,'','','','121.0','2023-05-10T19:00:00.000+0000','ShipAndDebit','','New','The required rebate claim product quantity is more than the remaining product quantity.','PMACMEACME234','61.0','','','','','','','Rebates','1','4','2');
+INSERT INTO "RebateClaim" VALUES(11,'','','','1.0','2023-07-08T19:00:00.000+0000','ShipAndDebit','Ship And Debit Rebates','New','','SPLYRPRGRM625','2.0','','','','','','','Rebates','1','7','3');
+INSERT INTO "RebateClaim" VALUES(12,'','','','1.0','2023-06-20T19:00:00.000+0000','ShipAndDebit','ShipAndDebit Rebate Claim','New','','SPLYRPRGRM625','2.0','','','','','','','Rebates','1','7','3');
+INSERT INTO "RebateClaim" VALUES(13,'','','','121.0','2023-05-10T19:00:00.000+0000','ShipAndDebit','','New','The required rebate claim product quantity is more than the remaining product quantity.','PRNACME248','61.0','','','','','','','Rebates','9','10','1');
+INSERT INTO "RebateClaim" VALUES(14,'','','','121.0','2023-05-25T19:00:00.000+0000','ShipAndDebit','Ship And Debit','New','','PMACMEACME234','2.0','','','','','','','Rebates','1','4','2');
+INSERT INTO "RebateClaim" VALUES(15,'','','','1.0','2023-07-17T19:00:00.000+0000','ShipAndDebit','','New','The required rebate claim product quantity is more than the remaining product quantity.','DRMPRN8585','60.0','','','','','','','Rebates','5','6','4');
+INSERT INTO "RebateClaim" VALUES(16,'','','','1.0','2023-07-08T19:00:00.000+0000','ShipAndDebit','ShipAndDebit Rebate Claim','New','','DRMPRN8585','2.0','','','','','','','Rebates','5','6','4');
+
 CREATE TABLE "RebateClaimAdjustment" (
 	id INTEGER NOT NULL, 
 	"AdjustmentAmount" VARCHAR(255), 
@@ -143,20 +140,6 @@ CREATE TABLE "RebateClaimAdjustment" (
 INSERT INTO "RebateClaimAdjustment" VALUES(1,'-20.0','','for sansui','extra discount','Approved','5');
 INSERT INTO "RebateClaimAdjustment" VALUES(2,'-30.0','','extra discount','extra discount','Approved','12');
 INSERT INTO "RebateClaimAdjustment" VALUES(3,'-5.0','','special discount','extra discount','Approved','16');
-CREATE TABLE "RebateMemberClaimAggregate" (
-	id INTEGER NOT NULL, 
-	"TotalClaimedAmount" VARCHAR(255), 
-	"TotalClaimedQuantity" VARCHAR(255), 
-	"ProductId" VARCHAR(255), 
-	"RebateProgramMemberId" VARCHAR(255), 
-	PRIMARY KEY (id)
-);
-INSERT INTO "RebateMemberClaimAggregate" VALUES(1,'40.0','2.0','4','1');
-INSERT INTO "RebateMemberClaimAggregate" VALUES(2,'1080.0','22.0','3','1');
-INSERT INTO "RebateMemberClaimAggregate" VALUES(3,'2721.0','100.0','1','4');
-INSERT INTO "RebateMemberClaimAggregate" VALUES(4,'60.0','2.0','2','5');
-INSERT INTO "RebateMemberClaimAggregate" VALUES(5,'-30.0','0.0','3','2');
-INSERT INTO "RebateMemberClaimAggregate" VALUES(6,'-5.0','0.0','4','3');
 CREATE TABLE "RebatePartnerSpecialPrcTrm" (
 	id INTEGER NOT NULL, 
 	"ProductQuantity" VARCHAR(255), 
@@ -176,12 +159,6 @@ INSERT INTO "RebatePartnerSpecialPrcTrm" VALUES(3,'100.0','61.0','False','For ch
 INSERT INTO "RebatePartnerSpecialPrcTrm" VALUES(4,'100.0','25.0','False','for sensor','','50.0','Active','1','4');
 INSERT INTO "RebatePartnerSpecialPrcTrm" VALUES(5,'50.0','','False','For Chipset 100','21.0','31.0','Active','4','3');
 INSERT INTO "RebatePartnerSpecialPrcTrm" VALUES(6,'20.0','50.0','True','for transistor','','50.0','Active','2','5');
-CREATE TABLE "RebatePayment" (
-	id INTEGER NOT NULL, 
-	"Amount" VARCHAR(255), 
-	"Name" VARCHAR(255), 
-	PRIMARY KEY (id)
-);
 CREATE TABLE "RebateProgram" (
 	id INTEGER NOT NULL, 
 	"Description" VARCHAR(255), 
@@ -199,7 +176,7 @@ CREATE TABLE "RebateProgram" (
 );
 INSERT INTO "RebateProgram" VALUES(1,'','2023-07-31','OnDemand','','Summer special program for Uptron','','SANUPTR5258','','2023-03-01','Active','ShipAndDebit');
 INSERT INTO "RebateProgram" VALUES(2,'','2024-03-30','OnDemand','','One year special program','','PRNACME248','','2023-03-01','Active','ShipAndDebit');
-INSERT INTO "RebateProgram" VALUES(3,'','2025-05-30','OnDemand','','Special program for Acme','','PMACMEACME234','','2023-04-01','Active','ShipAndDebit');
+INSERT INTO "RebateProgram" VALUES(3,'','2025-05-30','OnDemand','','Special program for ACM Corporation','','PMACMEACME234','','2023-04-01','Active','ShipAndDebit');
 INSERT INTO "RebateProgram" VALUES(4,'','2025-05-31','OnDemand','','Special 2 offer program for dealers','','SPLYRPRGRM625','','2023-03-01','Active','ShipAndDebit');
 INSERT INTO "RebateProgram" VALUES(5,'','2024-10-03','OnDemand','','Mid Quarter Special Program','','DRMPRN8585','','2023-07-01','Active','ShipAndDebit');
 CREATE TABLE "RebateProgramMember" (
@@ -213,10 +190,10 @@ CREATE TABLE "RebateProgramMember" (
 	PRIMARY KEY (id)
 );
 INSERT INTO "RebateProgramMember" VALUES(1,'False','Active','Uptron','8','1','7');
-INSERT INTO "RebateProgramMember" VALUES(2,'False','Active','Acme','1','4','7');
+INSERT INTO "RebateProgramMember" VALUES(2,'False','Active','ACM Corporation','1','4','7');
 INSERT INTO "RebateProgramMember" VALUES(3,'False','Active','Dreamer','5','5','6');
 INSERT INTO "RebateProgramMember" VALUES(4,'False','Active','Xelate','9','2','10');
-INSERT INTO "RebateProgramMember" VALUES(5,'False','Active','Acme','1','3','4');
+INSERT INTO "RebateProgramMember" VALUES(5,'False','Active','ACM Corporation','1','3','4');
 CREATE TABLE "RebatePtnrSpclPrcTrmBnft" (
 	id INTEGER NOT NULL, 
 	"Discount" VARCHAR(255), 
