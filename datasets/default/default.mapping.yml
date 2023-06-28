@@ -86,12 +86,6 @@ Insert UnitOfMeasure:
   - Name
   - Type
   - UnitCode
-Insert RebatePayment:
-  sf_object: RebatePayment
-  table: RebatePayment
-  fields:
-  - Amount
-  - Name
 Insert RebateProgramMember:
   sf_object: RebateProgramMember
   table: RebateProgramMember
@@ -187,20 +181,7 @@ Insert RebatePtnrSpclPrcTrmBnft:
   lookups:
     RebatePartnerSpecialPrcTrmId:
       table: RebatePartnerSpecialPrcTrm
-      key_field: RebatePartnerSpecialPrcTrmId      
-Insert RebateMemberClaimAggregate:
-  sf_object: RebateMemberClaimAggregate
-  table: RebateMemberClaimAggregate
-  fields:
-  - TotalClaimedAmount
-  - TotalClaimedQuantity
-  lookups:
-    ProductId:
-      table: Product2
-      key_field: ProductId
-    RebateProgramMemberId:
-      table: RebateProgramMember
-      key_field: RebateProgramMemberId      
+      key_field: RebatePartnerSpecialPrcTrmId         
 Insert RebateClaim:
   sf_object: RebateClaim
   table: RebateClaim
@@ -208,7 +189,6 @@ Insert RebateClaim:
   - ClaimedByAccountNumber
   - ParticipatingAccountNumber
   - ProductCode
-  - CalculatedAmount
   - ClaimAmount
   - ClaimDate
   - ClaimType
@@ -222,7 +202,6 @@ Insert RebateClaim:
   - SalePricePerUnit
   - ShipDate
   - ShippedTransactionIdentifier
-  - TotalAdjustmentAmount
   - TransactionIdentifier
   - UsageType
   lookups:
@@ -234,13 +213,7 @@ Insert RebateClaim:
       key_field: ParticipatingAccountId
     ProductId:
       table: Product2
-      key_field: ProductId
-    RebateMemberClaimAggregateId:
-      table: RebateMemberClaimAggregate
-      key_field: RebateMemberClaimAggregateId
-    RebatePaymentId:
-      table: RebatePayment
-      key_field: RebatePaymentId
+      key_field: ProductId   
 Insert RebateClaimAdjustment:
   sf_object: RebateClaimAdjustment
   table: RebateClaimAdjustment

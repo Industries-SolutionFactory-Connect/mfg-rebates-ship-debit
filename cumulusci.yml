@@ -43,16 +43,77 @@ flows:
                     user_alias: UUser, AUser
                 ui_options:
                     name: Adding Permission Set to Admin User                    
-    dev_org:
+    config_dev:
         steps:
-            3.1:
+            91:
                 task: update_data
                 options:
                     object: RebateClaim
-                    where: Description like 'ShipAndDebit%'
+                    where: ProcessingStatus = 'New' And Description like 'Ship And Debit'
+                    recipe: snowfakery/updateRebateClaimStatusToReview.recipe.yml
+                ui_options:
+                    name: Update RebateClaim status
+            92:
+                task: update_data
+                options:
+                    object: RebateClaim
+                    where: ProcessingStatus = 'New' And Description like 'Ship & Debit'
+                    recipe: snowfakery/updateRebateClaimStatusToReview.recipe.yml
+                ui_options:
+                    name: Update RebateClaim status
+
+            93:
+                task: update_data
+                options:
+                    object: RebateClaim
+                    where: ProcessingStatus = 'New' And Description like 'Ship And Debit Rebates'
+                    recipe: snowfakery/updateRebateClaimStatusToReview.recipe.yml
+                ui_options:
+                    name: Update RebateClaim status
+            94:
+                task: update_data
+                options:
+                    object: RebateClaim
+                    where: ProcessingStatus = 'New' And Description like 'Ship & Debit Rebates'
+                    recipe: snowfakery/updateRebateClaimStatusToReview.recipe.yml
+                ui_options:
+                    name: Update RebateClaim status
+
+            95:
+                task: update_data
+                options:
+                    object: RebateClaim
+                    where: ProcessingStatus = 'New' And Description = 'ShipAndDebit Rebate Claim' 
+                    recipe: snowfakery/updateRebateClaimStatusToReview.recipe.yml
+                ui_options:
+                    name: Update RebateClaim status
+
+            96:
+                task: update_data
+                options:
+                    object: RebateClaim
+                    where: ProcessingStatus = 'New' And Description like 'Ship & Debit Rebate Claim%'
+                    recipe: snowfakery/updateRebateClaimStatusToReview.recipe.yml
+                ui_options:
+                    name: Update RebateClaim status
+
+            97:
+                task: update_data
+                options:
+                    object: RebateClaim
+                    where: ProcessingStatus = 'New'
+                    recipe: snowfakery/updateRebateClaimStatusToReview.recipe.yml
+                ui_options:
+                    name: Update RebateClaim status
+
+            98:
+                task: update_data
+                options:
+                    object: RebateClaim
+                    where: Description = 'ShipAndDebit Rebate Claim' 
                     recipe: snowfakery/updateRebateClaimStatus.recipe.yml
                 ui_options:
-                    name: Assign Role to Admin User            
+                    name: Update RebateClaim status          
     rebates-sd-setup:
         steps:
             1: 
@@ -90,10 +151,70 @@ flows:
                 task: update_data
                 options:
                     object: RebateClaim
-                    where: Description like 'ShipAndDebit%'
+                    where: ProcessingStatus = 'New' And Description like 'Ship And Debit'
+                    recipe: snowfakery/updateRebateClaimStatusToReview.recipe.yml
+                ui_options:
+                    name: Update RebateClaim status
+            3:
+                task: update_data
+                options:
+                    object: RebateClaim
+                    where: ProcessingStatus = 'New' And Description like 'Ship & Debit'
+                    recipe: snowfakery/updateRebateClaimStatusToReview.recipe.yml
+                ui_options:
+                    name: Update RebateClaim status
+            4:
+                task: update_data
+                options:
+                    object: RebateClaim
+                    where: ProcessingStatus = 'New' And Description like 'Ship And Debit Rebates'
+                    recipe: snowfakery/updateRebateClaimStatusToReview.recipe.yml
+                ui_options:
+                    name: Update RebateClaim status
+            5:
+                task: update_data
+                options:
+                    object: RebateClaim
+                    where: ProcessingStatus = 'New' And Description like 'Ship & Debit Rebates'
+                    recipe: snowfakery/updateRebateClaimStatusToReview.recipe.yml
+                ui_options:
+                    name: Update RebateClaim status
+
+            6:
+                task: update_data
+                options:
+                    object: RebateClaim
+                    where: ProcessingStatus = 'New' And Description = 'ShipAndDebit Rebate Claim' 
+                    recipe: snowfakery/updateRebateClaimStatusToReview.recipe.yml
+                ui_options:
+                    name: Update RebateClaim status
+
+            7:
+                task: update_data
+                options:
+                    object: RebateClaim
+                    where: ProcessingStatus = 'New' And Description like 'Ship & Debit Rebate Claim%'
+                    recipe: snowfakery/updateRebateClaimStatusToReview.recipe.yml
+                ui_options:
+                    name: Update RebateClaim status
+
+            8:
+                task: update_data
+                options:
+                    object: RebateClaim
+                    where: ProcessingStatus = 'New'
+                    recipe: snowfakery/updateRebateClaimStatusToReview.recipe.yml
+                ui_options:
+                    name: Update RebateClaim status
+
+            9:
+                task: update_data
+                options:
+                    object: RebateClaim
+                    where: Description = 'ShipAndDebit Rebate Claim' 
                     recipe: snowfakery/updateRebateClaimStatus.recipe.yml
                 ui_options:
-                    name: Assign Role to Admin User
+                    name: Update RebateClaim status
 
     rebates:
         steps:
