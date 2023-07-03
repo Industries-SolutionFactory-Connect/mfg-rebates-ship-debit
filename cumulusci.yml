@@ -225,22 +225,25 @@ flows:
 plans:
     install:
         slug: install
-        title: Ship and Debit
+        title: Ship and Debit Configuration
         tier: primary
         is_listed: True
-        preflight_message: "This will install Ship and Debit Module"
-        post_install_message: "Thanks for installing Ship and Debit Module. "
+        preflight_message: "This will install Ship and Debit Configuration Module"
+        post_install_message: "Thanks for installing Ship and Debit Configuration Module. "
         error_message: "To get help with this error, go to [help.salesforce.com](https://help.salesforce.com/), find the Support & Services area and log a technical support ticket with Salesforce. Include “PMM” in the subject line and include in your comment the installation link shown here."
         checks:
             - when: "'ShipAndDebitManagementAdminPsl' not in tasks.get_available_permission_set_licenses()"
               action: error
-              message: "You need ShipAndDebitManagementAdminPsl licence to use this feature. Contact your Administrator."
+              message: "You need ShipAndDebitManagementAdminPsl permission set to use this feature. Contact your Administrator."
             - when: "'ShipAndDebitManagementUserPsl' not in tasks.get_available_permission_set_licenses()"
               action: error
-              message: "You need ShipAndDebitManagementUserPsl licence to use this feature. Contact your Administrator."
-            - when: "'RebateManagementPsl' not in tasks.get_available_permission_set_licenses()"
+              message: "You need ShipAndDebitManagementUserPsl permission set to use this feature. Contact your Administrator."
+            - when: "'RebateManagementAdminPsl' not in tasks.get_available_permission_set_licenses()"
               action: error
-              message: "You need RebateManagementPsl licence to use this feature. Contact your Administrator."
+              message: "You need RebateManagementAdminPsl licence to use this feature. Contact your Administrator."
+            - when: "'RebateManagementUserPsl' not in tasks.get_available_permission_set_licenses()"
+              action: error
+              message: "You need RebateManagementUserPsl licence to use this feature. Contact your Administrator."
             - when: "'RebateManagementExpCloudPsl' not in tasks.get_available_permission_set_licenses()"
               action: error
               message: "You need RebateManagementExpCloudPsl licence to use this feature. Contact your Administrator."
@@ -253,19 +256,22 @@ plans:
         title: Sample Data Plan
         tier: additional
         is_listed: True
-        preflight_message: "This will install Ship and Debit Module"
-        post_install_message: "Thanks for installing Ship and Debit Module. "
+        preflight_message: "This will deploy data for Ship and Debit Module"
+        post_install_message: "Thanks for installing Sample Data Plan for Ship and Debit Module. "
         error_message: "To get help with this error, go to [help.salesforce.com](https://help.salesforce.com/), find the Support & Services area and log a technical support ticket with Salesforce. Include “PMM” in the subject line and include in your comment the installation link shown here."
         checks:
-            - when: "'ShipAndDebitManagementAdminPsl' not in tasks.get_available_permission_set_licenses()"
+             - when: "'ShipAndDebitManagementAdminPsl' not in tasks.get_available_permission_set_licenses()"
               action: error
-              message: "You need ShipAndDebitManagementAdminPsl licence to use this feature. Contact your Administrator."
+              message: "You need ShipAndDebitManagementAdminPsl permission set to use this feature. Contact your Administrator."
             - when: "'ShipAndDebitManagementUserPsl' not in tasks.get_available_permission_set_licenses()"
               action: error
-              message: "You need ShipAndDebitManagementUserPsl licence to use this feature. Contact your Administrator."
-            - when: "'RebateManagementPsl' not in tasks.get_available_permission_set_licenses()"
+              message: "You need ShipAndDebitManagementUserPsl permission set to use this feature. Contact your Administrator."
+            - when: "'RebateManagementAdminPsl' not in tasks.get_available_permission_set_licenses()"
               action: error
-              message: "You need RebateManagementPsl licence to use this feature. Contact your Administrator."
+              message: "You need RebateManagementAdminPsl licence to use this feature. Contact your Administrator."
+            - when: "'RebateManagementUserPsl' not in tasks.get_available_permission_set_licenses()"
+              action: error
+              message: "You need RebateManagementUserPsl licence to use this feature. Contact your Administrator."
             - when: "'RebateManagementExpCloudPsl' not in tasks.get_available_permission_set_licenses()"
               action: error
               message: "You need RebateManagementExpCloudPsl licence to use this feature. Contact your Administrator."
