@@ -260,7 +260,7 @@ plans:
         post_install_message: "Thanks for installing Sample Data Plan for Ship and Debit Module. "
         error_message: "To get help with this error, go to [help.salesforce.com](https://help.salesforce.com/), find the Support & Services area and log a technical support ticket with Salesforce. Include “PMM” in the subject line and include in your comment the installation link shown here."
         checks:
-             - when: "'ShipAndDebitManagementAdminPsl' not in tasks.get_available_permission_set_licenses()"
+            - when: "'ShipAndDebitManagementAdminPsl' not in tasks.get_available_permission_set_licenses()"
               action: error
               message: "You need ShipAndDebitManagementAdminPsl permission set to use this feature. Contact your Administrator."
             - when: "'ShipAndDebitManagementUserPsl' not in tasks.get_available_permission_set_licenses()"
