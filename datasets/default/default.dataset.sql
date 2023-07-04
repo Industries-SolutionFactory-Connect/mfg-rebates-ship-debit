@@ -174,7 +174,7 @@ CREATE TABLE "RebateProgram" (
 	"Type" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "RebateProgram" VALUES(1,'','2023-07-31','OnDemand','','Summer special program for Uptron','','SANUPTR5258','','2023-03-01','Active','ShipAndDebit');
+INSERT INTO "RebateProgram" VALUES(1,'','2023-07-31','OnDemand','10','Summer special program for Uptron','','SANUPTR5258','','2023-03-01','Active','ShipAndDebit');
 INSERT INTO "RebateProgram" VALUES(2,'','2024-03-30','OnDemand','','One year special program','','PRNACME248','','2023-03-01','Active','ShipAndDebit');
 INSERT INTO "RebateProgram" VALUES(3,'','2025-05-30','OnDemand','','Special program for ACM Corporation','','PMACMEACME234','','2023-04-01','Active','ShipAndDebit');
 INSERT INTO "RebateProgram" VALUES(4,'','2025-05-31','OnDemand','','Special 2 offer program for dealers','','SPLYRPRGRM625','','2023-03-01','Active','ShipAndDebit');
