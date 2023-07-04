@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <!-- <types>
+        <members>RebateProgram</members>
+        <members>RebateProgramMember</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>RebateProgram-Rebate Program Layout</members>
+        <members>RebateProgramMember-Rebate Program Member Layout</members>
+        <name>Layout</name>
+    </types> -->
+    <types>
+        <members>Admin</members>
+        <name>Profile</name>
+    </types>
+    <version>58.0</version>
+</Package>
