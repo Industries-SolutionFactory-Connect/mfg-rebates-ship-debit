@@ -36,13 +36,13 @@ flows:
                     definition_file: orgs/dev.json
                 ui_options:
                     name: Enabling Org Settings
-            3:
-                task: assign_permission_sets
-                options:
-                    api_names: ShipAndDebitManagementAdminPsl, ShipAndDebitManagementUserPsl
-                    user_alias: UUser, AUser
-                ui_options:
-                    name: Adding Permission Set to Admin User                    
+            # 3:
+            #     task: assign_permission_sets
+            #     options:
+            #         api_names: ShipAndDebitManagementAdminPsl, ShipAndDebitManagementUserPsl
+            #         user_alias: UUser, AUser
+            #     ui_options:
+            #         name: Adding Permission Set to Admin User                    
     config_dev:
         steps:
             91:
@@ -123,13 +123,13 @@ flows:
                 ui_options:
                     name: Enabling Org Settings to setup Ship & Debit feature
 
-            2:
-                task: assign_permission_sets
-                options:
-                    api_names: ShipAndDebitManagementAdminPsl, ShipAndDebitManagementUserPsl
-                    user_alias: UUser, AUser
-                ui_options:
-                    name: Adding Permission Set to Admin User
+            # 2:
+            #     task: assign_permission_sets
+            #     options:
+            #         api_names: ShipAndDebitManagementAdminPsl, ShipAndDebitManagementUserPsl
+            #         user_alias: UUser, AUser
+            #     ui_options:
+            #         name: Adding Permission Set to Admin User
         
             3:
                 task: deploy
@@ -222,6 +222,16 @@ flows:
                 flow: rebates-sd-setup
             2: 
                 flow: rebates-sd-data
+
+    test-flow:
+        steps:
+            1:
+                
+                task: deploy
+                options:
+                    path: force-app/main/default/profiles
+                ui_options:
+                    name: Deploy the metadata
 plans:
     install:
         slug: install
@@ -244,6 +254,12 @@ plans:
             - when: "'RebateManagementExpCloudPsl' not in tasks.get_available_permission_set_licenses()"
               action: error
               message: "You need RebateManagementExpCloudPsl licence to use this feature. Contact your Administrator."
+            - when: "'ShipAndDebitManagementAdminPsl' not in tasks.get_assigned_permission_sets()"
+              action: error
+              message: "You need ShipAndDebitManagementAdminPsl permission set to use this feature. Contact your Administrator."
+            - when: "'ShipAndDebitManagementUserPsl' not in tasks.get_assigned_permission_sets()"
+              action: error
+              message: "You need ShipAndDebitManagementUserPsl permission set to use this feature. Contact your Administrator."  
         steps:
             1:
                 flow: rebates-sd-setup
@@ -269,6 +285,12 @@ plans:
             - when: "'RebateManagementExpCloudPsl' not in tasks.get_available_permission_set_licenses()"
               action: error
               message: "You need RebateManagementExpCloudPsl licence to use this feature. Contact your Administrator."
+            - when: "'ShipAndDebitManagementAdminPsl' not in tasks.get_assigned_permission_sets()"
+              action: error
+              message: "You need ShipAndDebitManagementAdminPsl permission set to use this feature. Contact your Administrator."
+            - when: "'ShipAndDebitManagementUserPsl' not in tasks.get_assigned_permission_sets()"
+              action: error
+              message: "You need ShipAndDebitManagementUserPsl permission set to use this feature. Contact your Administrator."  
         steps:
             1:
                 flow: rebates-sd-data
